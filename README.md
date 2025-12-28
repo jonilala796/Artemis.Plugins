@@ -1,5 +1,5 @@
 # Artemis Plugins
-[![Build Status](https://dev.azure.com/artemis-rgb/Artemis/_apis/build/status/Artemis-RGB.Artemis.Plugins?repoName=Artemis-RGB%2FArtemis.Plugins&branchName=master)](https://dev.azure.com/artemis-rgb/Artemis/_build/latest?definitionId=2&repoName=Artemis-RGB%2FArtemis.Plugins&branchName=master)
+[![Build Status](https://github.com/Artemis-RGB/Artemis.Plugins/actions/workflows/artemis-plugins.yml/badge.svg)](https://github.com/Artemis-RGB/Artemis.Plugins/actions/workflows/artemis-plugins.yml)
 [![GitHub license](https://img.shields.io/badge/license-noncommercial-blue.svg)](https://github.com/Artemis-RGB/Artemis.Plugins/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Artemis-RGB/Artemis.Plugins.svg)](https://github.com/Artemis-RGB/Artemis.Plugins/stargazers)
 [![Discord](https://img.shields.io/discord/392093058352676874?logo=discord&logoColor=white)](https://discord.gg/S3MVaC9) 
@@ -8,12 +8,13 @@
 Repository containing official Artemis plugins
 
 ### Installation
-Note: These plugins are provided in a pre-release state. The installation process will eventually be automated through the workshop
-They are also included in the pre-release builds of Artemis found over at [the main repository](https://github.com/Artemis-RGB/Artemis).
-1. Find the latest succesful build [here](https://dev.azure.com/artemis-rgb/Artemis/_build/latest?definitionId=2&repoName=Artemis-RGB%2FArtemis.Plugins&branchName=master) and open the build artifact by clicking on ![1 published](https://i.imgur.com/UBu0BBW.png)
-2. Download the Artifacts you'd like. Each Artifact contains one plugin
-3. Extract the Artifact into its own folder at ```%ProgramData%\Artemis\plugins```
-4. If already running, restart Artemis
+All of these plugins are uploaded to the workshop automatically whenever a change is made.
+1. Install the latest version of Artemis
+2. During the setup, a wizard will show up, the features you choose to install there are from this repository
+3. If you wish you can install additional plugins inside Artemis by navigating to Workshop > Plugins (these particular plugins are uploaded by Artemis RGB)
+
+![screenshot](https://i.imgur.com/0csLZaI.png)  
+_Example of one of the plugins of this repo in the workshop_
 
 **If you run into any issues please let us know on Discord.**
 
@@ -31,3 +32,4 @@ Due to the volatine nature of the project right now, there is no documentation y
 3. Open ```<central folder>\Artemis\src\Artemis.sln``` and build with the default config
 4. Clone Artemis.Plugins into  ```<central folder>\Artemis.Plugins```
 5. Open ```<central folder>\Artemis.Plugins\src\Artemis.Plugins.sln``` and build with the default config
+
