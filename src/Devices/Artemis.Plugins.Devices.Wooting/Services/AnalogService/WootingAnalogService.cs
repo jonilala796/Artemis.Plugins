@@ -13,7 +13,6 @@ public sealed class WootingAnalogService : ReusableService
 {
     private readonly ILogger _logger;
     private List<WootingAnalogDevice> _devices;
-    private DateTime _lastUpdate;
     public IEnumerable<WootingAnalogDevice> Devices => _devices;
 
     public WootingAnalogService(ILogger logger)
@@ -25,10 +24,6 @@ public sealed class WootingAnalogService : ReusableService
     public void Update()
     {
         if (!IsActivated)
-            return;
-        
-        DateTime now = DateTime.Now;
-        if (now - _lastUpdate < TimeSpan.FromSeconds(1.0 / 30.0))
             return;
         
         foreach (WootingAnalogDevice device in _devices)
@@ -45,8 +40,6 @@ public sealed class WootingAnalogService : ReusableService
                     _logger.Verbose("Failed to find mapping for hid code {hidCode}", key);
             }
         }
-        
-        _lastUpdate = now;
     }
 
     /// <summary>

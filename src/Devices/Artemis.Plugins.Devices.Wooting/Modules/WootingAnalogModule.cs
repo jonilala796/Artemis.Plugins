@@ -13,6 +13,7 @@ public class WootingAnalogModule : Module<WootingDataModel>
     private readonly WootingAnalogService _analogService;
     public override List<IModuleActivationRequirement> ActivationRequirements { get; } = new();
     private int _useToken;
+    private double _totalDeltaTime;
 
     public WootingAnalogModule(WootingAnalogService service)
     {
@@ -28,7 +29,12 @@ public class WootingAnalogModule : Module<WootingDataModel>
 
     public override void Update(double deltaTime)
     {
+        _totalDeltaTime += deltaTime;
+        if (_totalDeltaTime < 0.016) // ~60 FPS
+            return;
+
         UpdateAnalogValues();
+        _totalDeltaTime = 0;
     }
 
     public override void Disable()
